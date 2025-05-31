@@ -186,3 +186,58 @@ header {
     width: 100%; /* بطاقة واحدة في الصف */
   }
 }
+/* تنظيم الألعاب فـ Grid */
+.games {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.games .game-card {
+  width: 100%;
+}
+
+/* الحاوية ديال الكروت */
+.games > .game-card:nth-child(3n+1) {
+  clear: both;
+}
+
+/* ترتيب الكروت 3 فكل صف */
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.game-card {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.game-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.game-card p {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.game-card a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.game-card a:hover {
+  background-color: #0b7dda;
+}
