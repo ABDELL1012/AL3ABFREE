@@ -1,3 +1,4 @@
+/* تصميم الشبكة ديال كروت الألعاب */
 .games-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 كروت في الصف */
@@ -53,10 +54,76 @@
   background-color: #0056b3;
 }
 
-/* تجاوبية: شاشات أصغر */
+/* تصميم المحتوى الرئيسي: الألعاب و العروض */
+main.content {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 15px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* باش يولي responsive */
+}
+
+.games {
+  flex: 1 1 700px; /* الألعاب تاخذ المساحة الأكبر */
+}
+
+.offers {
+  flex: 1 1 300px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.offers h2 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.offers ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offers ul li {
+  margin-bottom: 12px;
+}
+
+.offers ul li a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.offers ul li a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* تجاوبية للشاشات الصغيرة */
+@media (max-width: 900px) {
+  main.content {
+    flex-direction: column;
+  }
+
+  .games, .offers {
+    flex: 1 1 100%;
+  }
+
+  .offers {
+    margin-top: 30px;
+  }
+}
+
+/* تجاوبية إضافية لكروت الألعاب */
 @media (max-width: 900px) {
   .games-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 في الصف */
+    grid-template-columns: repeat(2, 1fr); /* 2 كروت في الصف */
   }
 }
 
