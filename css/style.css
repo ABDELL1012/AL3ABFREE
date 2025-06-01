@@ -1,14 +1,14 @@
 /* تصميم الشبكة ديال كروت الألعاب */
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 كروت في الصف */
-  gap: 1.5rem; /* المسافة بين الكروت */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
 }
 
-/* تحسينات لكروت الألعاب */
+/* كروت الألعاب */
 .game-card {
   background-color: #fff;
   border-radius: 10px;
@@ -54,7 +54,7 @@
   background-color: #0056b3;
 }
 
-/* تصميم المحتوى الرئيسي: الألعاب و العروض */
+/* تصميم الصفحة */
 main.content {
   display: flex;
   gap: 30px;
@@ -62,11 +62,11 @@ main.content {
   margin: 30px auto;
   padding: 0 15px;
   align-items: flex-start;
-  flex-wrap: wrap; /* باش يولي responsive */
+  flex-wrap: wrap;
 }
 
 .games {
-  flex: 1 1 700px; /* الألعاب تاخذ المساحة الأكبر */
+  flex: 1 1 700px;
 }
 
 .offers {
@@ -105,7 +105,28 @@ main.content {
   text-decoration: underline;
 }
 
-/* تجاوبية للشاشات الصغيرة */
+/* زر التنقل بين الصفحات */
+.pagination {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.pagination a {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #0056b3;
+}
+
+/* تجاوبية */
 @media (max-width: 900px) {
   main.content {
     flex-direction: column;
@@ -118,17 +139,14 @@ main.content {
   .offers {
     margin-top: 30px;
   }
-}
 
-/* تجاوبية إضافية لكروت الألعاب */
-@media (max-width: 900px) {
   .games-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 كروت في الصف */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .games-grid {
-    grid-template-columns: 1fr; /* بطاقة وحدة في الصف */
+    grid-template-columns: 1fr;
   }
 }
